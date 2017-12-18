@@ -34,3 +34,6 @@ def	main():
 if __name__ == "__main__":
 	if len(sys.argv) == 9:
 		main()
+		sys.exit (0)
+	else:
+		sys.exit (84)

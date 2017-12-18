@@ -2,6 +2,9 @@ from determinate_solution import *
 import sys
 from math import sqrt
 
+def	display_infinite():
+	print ("There is an infinite number  of intersection points.")
+
 def	display_line():
 	print ("straight line going through the (", end ="")
 	print (sys.argv[2], end = "")
@@ -18,35 +21,41 @@ def	display_line():
 	print (")")
 
 def	display_one_solution(second, first, zero, line):
-	sol_equa = -first / (2 * second)
-	point = determinate_solution(sol_equa, line)
-	print ("1 intersection point :")
-	print ("(", end = '')
-	print ("%.3f" % point.x, end = '')
-	print (", ", end="")
-	print ("%.3f" % point.y, end = '')
-	print (", ", end="")
-	print ("%.3f" % point.z, end = '')
-	print (")")
+	if second == 0:
+		display_infinite()
+	else:
+		sol_equa = -first / (2 * second)
+		point = determinate_solution(sol_equa, line)
+		print ("1 intersection point :")
+		print ("(", end = '')
+		print ("%.3f" % point.x, end = '')
+		print (", ", end="")
+		print ("%.3f" % point.y, end = '')
+		print (", ", end="")
+		print ("%.3f" % point.z, end = '')
+		print (")")
 
 def	display_two_solution(second, first, zero, line):
 	delta = pow(first, 2) - 4 * second * zero
-	sol_equa = (-first + sqrt(delta)) / (2 * second)
-	point = determinate_solution(sol_equa, line)
-	print ("2 intersection points :")
-	print ("(", end = '')
-	print ("%.3f" % point.x, end = '')
-	print (", ", end="")
-	print ("%.3f" % point.y, end = '')
-	print (", ", end="")
-	print ("%.3f" % point.z, end = '')
-	print (")")
-	sol_equa = (-first - sqrt(delta)) / (2 * second)
-	point = determinate_solution(sol_equa, line)
-	print ("(", end = '')
-	print ("%.3f" % point.x, end = '')
-	print (", ", end="")
-	print ("%.3f" % point.y, end = '')
-	print (", ", end="")
-	print ("%.3f" % point.z, end = '')
-	print (")")
+	if second == 0:
+		display_infinite()
+	else:
+		sol_equa = (-first + sqrt(delta)) / (2 * second)
+		point = determinate_solution(sol_equa, line)
+		print ("2 intersection points :")
+		print ("(", end = '')
+		print ("%.3f" % point.x, end = '')
+		print (", ", end="")
+		print ("%.3f" % point.y, end = '')
+		print (", ", end="")
+		print ("%.3f" % point.z, end = '')
+		print (")")
+		sol_equa = (-first - sqrt(delta)) / (2 * second)
+		point = determinate_solution(sol_equa, line)
+		print ("(", end = '')
+		print ("%.3f" % point.x, end = '')
+		print (", ", end="")
+		print ("%.3f" % point.y, end = '')
+		print (", ", end="")
+		print ("%.3f" % point.z, end = '')
+		print (")")
