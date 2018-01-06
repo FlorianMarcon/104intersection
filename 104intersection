@@ -10,7 +10,7 @@ from display import display_line
 def	choice_shape(shape, line):
 	origine = Point(0, 0, 0)
 	if float(shape) == 1:
-		print ("Sphere of radius", sys.argv[8])
+		print ("sphere of radius", sys.argv[8])
 		display_line()
 		circle = Circle(origine, float(sys.argv[8]))
 		circle_intersection(line, circle)
